@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Text, Image, Stylesheet } from "react-native";
+import {images} from '../utils/CoinIcons';
 
 const styles = Stylesheet.create({
   container: {
@@ -75,16 +76,28 @@ const {
     moneySymbol
 } = styles;
 
-const CoinCard = ({symbol, coin_name, price_used, percentage_change_24hr,percentage_change_7d}) => {
+const CoinCard = ({symbol, coin_name, price_usd, percentage_change_24hr,percentage_change_7d}) => {
     return(){
-        <View style={container}>
-            <View style={upperRow}>
-                <Image style={styles.image} source={{uri: images[symbol]}}/>
-                <Text style={coinSymbol}></Text>
-                <Text style={seperator}></Text>
-                <Text style={coinSymbol}></Text>
-                <Text style={coinSymbol}></Text>
+        <View>
+            <View style={container}>
+                <View style={upperRow}>
+                    <Image style={styles.image} source={{uri: images[symbol]}}/>
+                    <Text style={coinSymbol}>{symbol}</Text>
+                    <Text style={seperator}>|</Text>
+                    <Text style={coinName}>{coin_name}</Text>
+                    <Text style={coinPrice}>{price_usd}<Text style={moneySymbol}> $ </Text></Text>
+                </View>
+            </View>
+            <View>
+                <Text>24 Hrs:
+                    <Text style={percentage_change_24hr < 0 ? percentageChangeMinus : percentageChangePlus }>{percentage_change_24hr} %</Text>
+                </Text>
+                <Text>7 Days:
+                    <Text style={percentage_change_7d < 0 ? percentageChangeMinus : percentageChangePlus }>{percentage_change_7d} %</Text>
+                </Text>
             </View>
         </View>
     }
 }
+
+export default CoinCard;
