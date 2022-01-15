@@ -77,18 +77,18 @@ const {
 } = styles;
 
 const CoinCard = ({symbol, coin_name, price_usd, percentage_change_24hr,percentage_change_7d}) => {
-    return(){
+    return(
         <View>
             <View style={container}>
                 <View style={upperRow}>
-                    <Image style={styles.image} source={{uri: images[symbol]}}/>
+                    <Image style={image} source={{uri: images[symbol]}}/>
                     <Text style={coinSymbol}>{symbol}</Text>
                     <Text style={seperator}>|</Text>
                     <Text style={coinName}>{coin_name}</Text>
                     <Text style={coinPrice}>{price_usd}<Text style={moneySymbol}> $ </Text></Text>
                 </View>
             </View>
-            <View>
+            <View style={statisticContainer}>
                 <Text>24 Hrs:
                     <Text style={percentage_change_24hr < 0 ? percentageChangeMinus : percentageChangePlus }>{percentage_change_24hr} %</Text>
                 </Text>
@@ -97,7 +97,7 @@ const CoinCard = ({symbol, coin_name, price_usd, percentage_change_24hr,percenta
                 </Text>
             </View>
         </View>
-    }
+    );
 }
 
 export default CoinCard;
