@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import { View, Text, Stylesheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 
 const Header = () =>{
     return(
-        <View style={headerContainer}>
-            <Text style={header}>
+        <View style={styles.headerContainer}>
+            <Text style={styles.header}>
                 Crypto App
             </Text>
         </View>
     );
 }
 
-const styles= Stylesheet.create({
+const styles = StyleSheet.create({
     headerContainer:{
         display:'flex',
         marginTop:5,

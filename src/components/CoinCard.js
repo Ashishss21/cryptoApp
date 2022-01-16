@@ -1,8 +1,8 @@
 import React from "react";
-import { View, Text, Image, Stylesheet } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 import {images} from '../Utils/CoinIcon';
 
-const styles = Stylesheet.create({
+const styles = StyleSheet.create({
   container: {
     display: "flex",
     marginBottom: 20,
