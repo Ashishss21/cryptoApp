@@ -3,7 +3,8 @@ import { connect } from "react-redux";
 import { View, Text, Stylesheet, ScrollView } from "react-native";
 import Spinner from "react-native-loading-spinner-overlay";
 
-import FetchCoinData from "./../actions/FetchCoinData";
+// import FetchCoinData from "./../actions/FetchCoinData";
+import FetchCoinData from '../Actions/FetchCoinData';
 import CoinCard from "./CoinCard";
 
 class CryptoContainer extends Component {
